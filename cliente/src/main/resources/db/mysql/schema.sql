@@ -2,9 +2,9 @@
 
 -- noinspection SqlNoDataSourceInspectionForFile
 
-DROP TABLE IF EXISTS client;
-DROP TABLE IF EXISTS address;
 DROP TABLE IF EXISTS visits;
+DROP TABLE IF EXISTS address;
+DROP TABLE IF EXISTS client;
 
 CREATE DATABASE IF NOT EXISTS microservicios;
 
@@ -19,6 +19,7 @@ CREATE TABLE IF NOT EXISTS client (
   first_name VARCHAR(30),
   last_name VARCHAR(30),
   city VARCHAR(30),
+  address VARCHAR(30),
   status VARCHAR(30),
   INDEX(last_name)
 ) engine=InnoDB;
@@ -40,4 +41,5 @@ CREATE TABLE IF NOT EXISTS visits (
   client_id INT(4) UNSIGNED NOT NULL,
   FOREIGN KEY (client_id) REFERENCES client(id)
 ) engine=InnoDB;
+
 
