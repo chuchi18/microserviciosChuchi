@@ -1,6 +1,6 @@
 spring:
   application:
-    name: cliente
+    name: config-cliente
   cloud:
     config:
       uri: http://localhost:8090
