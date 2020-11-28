@@ -1,6 +1,6 @@
 package com.chuchi.microservicios.cliente.repositories;
 
-import com.chuchi.microservicios.cliente.domains.Cliente;
+import com.chuchi.microservicios.entidadesMySQL.domains.Cliente;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.Repository;
 import org.springframework.data.repository.query.Param;
