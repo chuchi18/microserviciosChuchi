@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: chuchi-config-facturas
+  cloud:
+    config:
+      uri: http://localhost:8090
+      label: main

@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: chuchi-config-pagos
+  cloud:
+    config:
+      uri: http://localhost:8090
+      label: main
