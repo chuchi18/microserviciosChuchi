@@ -2,24 +2,45 @@ package com.chuchi.microservicios.pagos.services;
 
 
 import com.chuchi.microservicios.entidadesMongo.domains.Pagos;
-import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
+import com.chuchi.microservicios.pagos.repositories.PagosRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-public interface PagosService {
 
-    public Mono<Pagos> getPagoId(String id);
+import java.util.List;
+import java.util.Optional;
 
-    public Flux<Pagos> getAllPagos();
+@Service
+public class PagosService {
 
-    public Mono<Pagos> savePago(Pagos nuevoPago);
+    @Autowired
+    PagosRepository pagosRepository;
 
-    public Mono<Void> deletePago(Pagos pago);
+    public Optional<Pagos> getPagoId(String id){
+        return pagosRepository.findById(id);
+    }
 
-    public Mono<Void> deletePago(String id);
+    public List<Pagos> getAllPagos(){
+        return pagosRepository.findAll();
+    }
+
+    public Pagos savePago(Pagos pago){
+        return pagosRepository.save(pago);
+    }
+
+    public void deletePago(Pagos pago){
+        pagosRepository.delete(pago);
+    }
+
+    public void deletePago(String id){
+        pagosRepository.deleteById(id);
+    }
 
   //  public Flux<Pagos> getPagoByClient_id(Integer clienteId);
 
 
-    public Flux<Pagos> getPagoByStatus(String status);
+    public List<Pagos> getPagoByStatus(String status){
+        return pagosRepository.findByStatus(status);
+    }
 
 }

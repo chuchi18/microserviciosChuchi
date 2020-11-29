@@ -1,25 +1,26 @@
 package com.chuchi.microservicios.pagos.repositories;
 
 import com.chuchi.microservicios.entidadesMongo.domains.Pagos;
-import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
-import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
-public interface PagosRepository extends ReactiveMongoRepository<Pagos, String> {
+import java.util.Optional;
+import java.util.List;
 
-    Flux<Pagos> findAll();
+public interface PagosRepository extends MongoRepository<Pagos, String> {
 
-    Mono<Pagos> findById(Integer id);
+    List<Pagos> findAll();
 
-    Mono<Pagos> save(Pagos pago);
+    Optional<Pagos> findById(Integer id);
 
-    Mono<Void> delete(Pagos pago);
+    Pagos save(Pagos pago);
 
-    Mono<Void> deleteById(Integer id);
+    void delete(Pagos pago);
 
-   // Flux<Pagos> findByClient_id(Integer client_id);
+    void deleteById(Integer id);
 
-   // Flux<Pagos> findByBill_id(Integer bill_id);
+   // List<Pagos> findByClient_id(Integer client_id);
 
-    Flux<Pagos> findByStatus(String status);
+   // List<Pagos> findByBill_id(Integer bill_id);
+
+    List<Pagos> findByStatus(String status);
 }

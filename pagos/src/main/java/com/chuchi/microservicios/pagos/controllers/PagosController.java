@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.util.List;
+import java.util.Optional;
+
 @RestController
 public class PagosController {
 
@@ -14,28 +17,28 @@ public class PagosController {
     PagosService pagosService;
 
     @GetMapping("/pagos")
-    public Flux<Pagos> getAllPagos(){
+    public List<Pagos> getAllPagos(){
         return this.pagosService.getAllPagos();
     }
 
     @GetMapping("/pagos/{id}")
-    public Mono<Pagos> getPago(@PathVariable("id") String id){
+    public Optional<Pagos> getPago(@PathVariable("id") String id){
         return this.pagosService.getPagoId(id);
     }
 
     @PostMapping(value="/pagos/insert")
-    public Mono<Pagos> insertPago(@RequestBody Pagos pago) {
+    public Pagos insertPago(@RequestBody Pagos pago) {
             return this.pagosService.savePago(pago);
     }
 
     @DeleteMapping(value="/pagos/delete")
-    public Mono<Void> deletePago(@RequestBody Pagos pago) {
-        return this.pagosService.deletePago(pago);
+    public void deletePago(@RequestBody Pagos pago) {
+        pagosService.deletePago(pago);
     }
 
     @DeleteMapping(value="/pagos/delete/{id}")
-    public Mono<Void> deletePago(@PathVariable("id") String id) {
-        return this.pagosService.deletePago(id);
+    public void deletePago(@PathVariable("id") String id) {
+        pagosService.deletePago(id);
     }
 /*
     @GetMapping("/pagos/client/{id}")
@@ -45,7 +48,7 @@ public class PagosController {
 */
 
     @GetMapping("/pagos/status/{status}")
-    public Flux<Pagos> getPagoByStatus(@PathVariable("status") String status){
+    public List<Pagos> getPagoByStatus(@PathVariable("status") String status){
         return this.pagosService.getPagoByStatus(status);
     }
 }
