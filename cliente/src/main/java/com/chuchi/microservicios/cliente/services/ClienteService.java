@@ -27,6 +27,10 @@ public class ClienteService {
         return clienteRepository.findByLastName(last_name);
     }
 
+    public Collection<Cliente> findByCity(String city){
+        return clienteRepository.findByCity(city);
+    }
+
     public Cliente deleteClient(Cliente cliente){
         clienteRepository.delete(cliente);
         return null;

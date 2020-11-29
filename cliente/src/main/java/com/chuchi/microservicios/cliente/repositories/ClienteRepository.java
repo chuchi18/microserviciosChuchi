@@ -14,6 +14,10 @@ public interface ClienteRepository extends Repository<Cliente, Integer> {
     @Transactional(readOnly = true)
     Collection<Cliente> findByLastName(@Param("last_name") String last_name);
 
+    @Query("SELECT cliente FROM Cliente cliente WHERE cliente.city LIKE :city%")
+    @Transactional(readOnly = true)
+    Collection<Cliente> findByCity(@Param("city") String city);
+
 
     @Query("SELECT cliente FROM Cliente cliente WHERE cliente.id =:id")
     @Transactional(readOnly = true)

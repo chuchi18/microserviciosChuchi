@@ -32,6 +32,12 @@ public class ClienteController {
         return clienteService.findByLastName(last_name);
     }
 
+    //Listar clientes por una determinada ciudad
+    @GetMapping("/clients/city/{city}")
+    public Collection<Cliente> getClientsCity(@PathVariable("city") String city){
+        return clienteService.findByCity(city);
+    }
+
     //Eliminar cliente por id
     @DeleteMapping("/clients/delete/{id}")
     public Cliente removeClient(@PathVariable("id") Integer id){
