@@ -17,15 +17,12 @@ public class ClienteController {
     //Añadir nuevo cliente
     @PostMapping("/clients/new")
     public Cliente add(@RequestBody Cliente cliente){
-        System.out.println("Nombre: "+cliente.getFirstName()+ "\nApellido: "+ cliente.getLastName());
         return clienteService.saveClient(cliente);
     }
 
     //Listar un determinado cliente por id
     @GetMapping("/clients/{id}")
     public Cliente getId(@PathVariable("id") Integer id){
-        System.out.println("Numero: "+id);
-        System.out.println("Direccion: "+clienteService.findById(id).getAddress());
         return clienteService.findById(id);
     }
 
