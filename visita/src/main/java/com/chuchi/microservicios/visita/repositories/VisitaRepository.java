@@ -19,6 +19,10 @@ public interface VisitaRepository extends Repository<Visita, Integer> {
     @Transactional(readOnly = true)
     Visita findById(@Param("id") Integer id);
 
+    @Query("SELECT visita FROM Visita visita WHERE visita.status LIKE :status%")
+    @Transactional(readOnly = true)
+    Collection<Visita> findByStatus(@Param("status") String status);
+
 
     void save(Visita visita);
     void delete(Visita visita);

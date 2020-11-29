@@ -22,6 +22,11 @@ public class VisitaService {
 
     }
 
+    public Collection<Visita> findByStatus(String status){
+        return visitaRepository.findByStatus(status);
+
+    }
+
     public Collection<Visita> findByClient_id(Integer client_id){
         return visitaRepository.findByClient_id(client_id);
     }

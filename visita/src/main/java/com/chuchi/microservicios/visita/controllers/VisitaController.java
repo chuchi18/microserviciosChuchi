@@ -25,6 +25,12 @@ public class VisitaController {
         return visitaService.findById(id);
     }
 
+    //Listar visitas dependiendo del estado
+    @GetMapping("/visits/status/{status}")
+    public Collection<Visita> getStatus(@PathVariable("status") String status){
+        return visitaService.findByStatus(status);
+    }
+
     //Listar todas las visitas de un determinado cliente
     @GetMapping("/visits/find/{client_id}")
     public Collection<Visita> getVisitsByClient(@PathVariable("client_id") Integer client_id){
