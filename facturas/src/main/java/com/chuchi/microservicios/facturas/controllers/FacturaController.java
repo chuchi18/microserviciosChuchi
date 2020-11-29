@@ -24,6 +24,11 @@ public class FacturaController {
         return this.facturaService.getFacturaId(id);
     }
 
+    @GetMapping("/bills/status/{status}")
+    public List<Factura> getBillByStatus(@PathVariable("status") String status){
+        return this.facturaService.getFacturaByStatus(status);
+    }
+
     @PostMapping(value="/bills/insert")
     public Factura saveBill(@RequestBody Factura factura) {
         return this.facturaService.saveFactura(factura);

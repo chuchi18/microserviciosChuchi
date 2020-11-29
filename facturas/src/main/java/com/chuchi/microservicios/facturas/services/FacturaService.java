@@ -17,6 +17,10 @@ public class FacturaService {
         return this.facturaRepository.findAll();
     }
 
+    public List<Factura> getFacturaByStatus(String status){
+        return this.facturaRepository.findByStatus(status);
+    }
+
     public Optional<Factura> getFacturaId(String id){
         return this.facturaRepository.findById(id);
     }

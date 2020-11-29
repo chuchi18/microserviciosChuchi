@@ -10,6 +10,8 @@ public interface FacturaRepository extends MongoRepository<Factura, String> {
 
     List<Factura> findAll();
 
+    List<Factura> findByStatus(String status);
+
     Optional<Factura> findById(String id);
 
     Factura save(Factura factura);
