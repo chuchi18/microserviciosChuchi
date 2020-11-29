@@ -1,0 +1,142 @@
+{
+	"info": {
+		"_postman_id": "47d40113-626c-4bfb-9054-d84e4acbbfd9",
+		"name": "Visits",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "New Visit",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\": \"Agendada\",\r\n    \"visit_date\" : \"2020-11-05\",\r\n    \"description\" : \"Visita pendiente\",\r\n    \"total\" : 35,\r\n    \"client_id\" : 19\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.1.37:8082/visits/new",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"37"
+					],
+					"port": "8082",
+					"path": [
+						"visits",
+						"new"
+					]
+				},
+				"description": "http://192.168.1.37:8082/visits/new"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Visit by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.1.37:8082/visits/2",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"37"
+					],
+					"port": "8082",
+					"path": [
+						"visits",
+						"2"
+					]
+				},
+				"description": "http://192.168.1.37:8082/visits/{id}"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Visits by Status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.1.37:8082/visits/status/Agendada",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"37"
+					],
+					"port": "8082",
+					"path": [
+						"visits",
+						"status",
+						"Agendada"
+					]
+				},
+				"description": "http://192.168.1.37:8082/visits/status/{status}"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Visits from ClientId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.1.37:8082/visits/find/19",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"37"
+					],
+					"port": "8082",
+					"path": [
+						"visits",
+						"find",
+						"19"
+					]
+				},
+				"description": "http://192.168.1.37:8082/visits/find/{ClientId}"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Visit by Id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.1.37:8082/visits/delete/4",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"37"
+					],
+					"port": "8082",
+					"path": [
+						"visits",
+						"delete",
+						"4"
+					]
+				},
+				"description": "http://192.168.1.37:8082/visits/delete/{id}"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

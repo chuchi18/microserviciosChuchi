@@ -1,0 +1,116 @@
+{
+	"info": {
+		"_postman_id": "d9800a98-572b-4ba5-b762-b825cba353a4",
+		"name": "Addresses",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "New address",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"address\": \"Calle Sala\",\r\n    \"client_id\" : 19\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.1.37:8081/address/new",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"37"
+					],
+					"port": "8081",
+					"path": [
+						"address",
+						"new"
+					]
+				},
+				"description": "http://192.168.1.37:8081/address/new"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Address by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.1.37:8081/address/2",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"37"
+					],
+					"port": "8081",
+					"path": [
+						"address",
+						"2"
+					]
+				},
+				"description": "http://192.168.1.37:8081/address/{id}"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Client Adresses",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.1.37:8081/address/find/19",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"37"
+					],
+					"port": "8081",
+					"path": [
+						"address",
+						"find",
+						"19"
+					]
+				},
+				"description": "http://192.168.1.37:8081/address/find/{clientId}"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Address by Id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.1.37:8081/address/2",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"37"
+					],
+					"port": "8081",
+					"path": [
+						"address",
+						"2"
+					]
+				},
+				"description": "http://192.168.1.37:8081/address/{id}"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

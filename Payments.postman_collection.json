@@ -1,0 +1,173 @@
+{
+	"info": {
+		"_postman_id": "ab465bf0-795b-4776-ad58-5bfd812bba8f",
+		"name": "Payments",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "New Payment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\"    : \"4\",\r\n    \"client_id\": 19,\r\n    \"status\"    : \"Pendiente\",\r\n    \"bill_id\" : 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.1.37:8086/pagos/insert",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"37"
+					],
+					"port": "8086",
+					"path": [
+						"pagos",
+						"insert"
+					]
+				},
+				"description": "http://192.168.1.37:8086/pagos/insert"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Payment by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.1.37:8086/pagos/3",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"37"
+					],
+					"port": "8086",
+					"path": [
+						"pagos",
+						"3"
+					]
+				},
+				"description": "http://192.168.1.37:8086/pagos/{id}"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Payments",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.1.37:8086/pagos",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"37"
+					],
+					"port": "8086",
+					"path": [
+						"pagos"
+					]
+				},
+				"description": "http://192.168.1.37:8086/pagos"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Payments by Status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.1.37:8086/pagos/status/Pendiente",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"37"
+					],
+					"port": "8086",
+					"path": [
+						"pagos",
+						"status",
+						"Pendiente"
+					]
+				},
+				"description": "http://192.168.1.37:8086/pagos/status/{status}"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Payment",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\"    : \"4\",\r\n    \"client_id\": 19,\r\n    \"status\"    : \"Pendiente\",\r\n    \"bill_id\" : 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.1.37:8086/pagos/delete",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"37"
+					],
+					"port": "8086",
+					"path": [
+						"pagos",
+						"delete"
+					]
+				},
+				"description": "http://192.168.1.37:8086/pagos/delete"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Payment by Id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.1.37:8086/pagos/delete/4",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"37"
+					],
+					"port": "8086",
+					"path": [
+						"pagos",
+						"delete",
+						"4"
+					]
+				},
+				"description": "http://192.168.1.37:8086/pagos/delete/{id}"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

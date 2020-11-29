@@ -1,0 +1,142 @@
+{
+	"info": {
+		"_postman_id": "3db8fd41-5a4e-46ef-9619-d050da06038b",
+		"name": "Clients",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "New client",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"first_name\": \"Pepe\",\r\n    \"last_name\": \"Rodriguez\",\r\n    \"city\" : \"Leon\",\r\n    \"address\": \"Calle Una\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.1.37:8081/clients/new",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"37"
+					],
+					"port": "8081",
+					"path": [
+						"clients",
+						"new"
+					]
+				},
+				"description": "http://192.168.1.37:8081/clients/new"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Client By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.1.37:8081/clients/20",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"37"
+					],
+					"port": "8081",
+					"path": [
+						"clients",
+						"20"
+					]
+				},
+				"description": "http://192.168.1.37:8081/clients/{id}"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Clients by LastName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.1.37:8081/clients/find/Martin",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"37"
+					],
+					"port": "8081",
+					"path": [
+						"clients",
+						"find",
+						"Martin"
+					]
+				},
+				"description": "http://192.168.1.37:8081/clients/find/{last_name}"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Client by Id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.1.37:8081/clients/delete/21",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"37"
+					],
+					"port": "8081",
+					"path": [
+						"clients",
+						"delete",
+						"21"
+					]
+				},
+				"description": "http://192.168.1.37:8081/clients/delete/{id}"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Clients by City",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.1.37:8081/clients/city/Rioja",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"37"
+					],
+					"port": "8081",
+					"path": [
+						"clients",
+						"city",
+						"Rioja"
+					]
+				},
+				"description": "http://192.168.1.37:8081/clients/city/Rioja"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

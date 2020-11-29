@@ -1,0 +1,148 @@
+{
+	"info": {
+		"_postman_id": "740ee466-967e-4947-bd35-e7b64cd6786d",
+		"name": "Bills",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "New Bill",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\"    :   \"8\",\r\n    \"paymentType\": \"Tipo 1\",\r\n    \"status\"    : \"Pagada\",\r\n    \"bill_lines\" : [1, 2, 5]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.1.37:8087/bills/insert",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"37"
+					],
+					"port": "8087",
+					"path": [
+						"bills",
+						"insert"
+					]
+				},
+				"description": "http://192.168.1.37:8087/bills/insert"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Bills",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.1.37:8087/bills",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"37"
+					],
+					"port": "8087",
+					"path": [
+						"bills"
+					]
+				},
+				"description": "http://192.168.1.37:8087/bills"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Bill by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.1.37:8087/bills/7",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"37"
+					],
+					"port": "8087",
+					"path": [
+						"bills",
+						"7"
+					]
+				},
+				"description": "http://192.168.1.37:8087/bills/{id}"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Bill by Status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.1.37:8087/bills/status/Pagada",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"37"
+					],
+					"port": "8087",
+					"path": [
+						"bills",
+						"status",
+						"Pagada"
+					]
+				},
+				"description": "http://192.168.1.37:8087/bills/status/{status}"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Bill",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\"    :   \"8\",\r\n    \"paymentType\": \"Tipo 1\",\r\n    \"status\"    : \"Pagada\",\r\n    \"bill_lines\" : [1, 2, 5]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.1.37:8087/bills/delete",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"37"
+					],
+					"port": "8087",
+					"path": [
+						"bills",
+						"delete"
+					]
+				},
+				"description": "http://192.168.1.37:8087/bills/delete"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
