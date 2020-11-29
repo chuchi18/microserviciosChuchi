@@ -1,4 +1,4 @@
-package com.chuchi.microservicios.visita;
+package com.chuchi.microservicios;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
