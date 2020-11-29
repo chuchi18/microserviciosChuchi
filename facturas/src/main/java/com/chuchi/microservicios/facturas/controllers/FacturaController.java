@@ -31,8 +31,8 @@ public class FacturaController {
     }
 
     @DeleteMapping(value="/bills/delete")
-    public void deleteBill(@RequestBody Factura f) {
-        this.facturaService.deleteFactura(f);
+    public void deleteBill(@RequestBody Factura factura) {
+        this.facturaService.deleteFactura(factura);
     }
 
 }
