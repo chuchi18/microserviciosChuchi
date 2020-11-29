@@ -10,10 +10,10 @@ public class Cliente {
     protected Integer id;
 
     @Column(name = "first_name")
-    protected String firstName;
+    protected String first_name;
 
     @Column(name = "last_name")
-    protected String lastName;
+    protected String last_name;
 
     @Column(name = "address")
     private String address;
@@ -38,19 +38,19 @@ public class Cliente {
     }
 
     public String getFirstName() {
-        return this.firstName;
+        return this.first_name;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setFirstName(String first_name) {
+        this.first_name = first_name;
     }
 
     public String getLastName() {
-        return this.lastName;
+        return this.last_name;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setLastName(String last_name) {
+        this.last_name = last_name;
     }
 
     public String getAddress() {
