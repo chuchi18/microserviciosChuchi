@@ -11,6 +11,16 @@ public class Pagos {
 
     private int client_id;
 
+    private int bill_id;
+
+    public int getBill_id() {
+        return bill_id;
+    }
+
+    public void setBill_id(int bill_id) {
+        this.bill_id = bill_id;
+    }
+
     public String getId() {
         return id;
     }
