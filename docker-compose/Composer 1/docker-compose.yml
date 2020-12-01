@@ -1,0 +1,68 @@
+version: "2"
+services:
+
+  db-msql:
+    image: mysql
+    container_name: mysql_comp
+    environment:
+        - MYSQL_ROOT_PASSWORD=chuchi18
+    ports: 
+        - "3307:3306"
+#    volumes:
+#      - db-data: D:\Curso:/var/lib/mysql
+
+  db-mongo:
+    image: mongo
+    container_name: mongo_comp
+    ports: 
+        - "27017:27017"
+        
+
+  eureka-server:
+    image: eureka
+    container_name: eureka-comp
+    ports:
+      - "8761:8761"
+        
+        
+  cliente:
+    image: cliente
+    container_name: cliente-comp
+    depends_on:
+        - db-msql
+        - eureka-server
+    ports:
+      - "8081:8081"
+      
+  visita:
+    image: visita
+    container_name: visita-comp
+    depends_on:
+        - db-msql
+        - eureka-server
+    ports:
+      - "8082:8082"
+      
+  facturas:
+    image: facturas
+    container_name: facturas-comp
+    depends_on:
+        - db-mongo
+        - eureka-server
+    ports:
+      - "8087:8087"
+      
+  pagos:
+    image: pagos
+    container_name: pagos-comp
+    depends_on:
+        - db-mongo
+        - eureka-server
+    ports:
+      - "8086:8086"
+        
+
+        
+        
+#volumes:
+ # db-data:

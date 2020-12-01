@@ -1,0 +1,28 @@
+version: "2"
+services:
+
+    configserver:
+        image: config
+        container_name: config-comp
+        ports:
+          - "8090:8090"
+
+    gateway:
+        image: gateway
+        container_name: gateway-comp
+        ports: 
+          - "8088:8088"
+
+    dashboard:
+        image: dashboard
+        container_name: dashboard-comp
+        ports: 
+          - "8010:8010"
+
+    turbine:
+        image: turbine
+        container_name: turbine-comp
+        ports:
+          - "8011:8011"
+
+
